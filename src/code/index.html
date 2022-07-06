@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>基于 Serverless 图像预测案例</title>
+    <title>基于 Serverless 图像压缩</title>
     <link href="https://www.bootcss.com/p/layoutit/css/bootstrap-combined.min.css" rel="stylesheet">
     <script>
         var image = undefined
         var uri = '/compress'
-        var appName = 'png-compress'
+        var appName = 'image-compress'
 
         function getCompressImage() {
             document.getElementById("result").innerText = "压缩中 ..."
@@ -27,9 +27,8 @@
             xmlhttp.setRequestHeader("Content-type", "application/json");
             xmlhttp.send(JSON.stringify({
                 "image": image,
-                "min_quality": document.getElementById('min_quality').value || '65',
-                "max_quality": document.getElementById('max_quality').value || '80',
-                "speed": document.getElementById('speed').value || '3',
+                "format": document.getElementById('format').value || 'jpg',
+                "quality": document.getElementById('quality').value || 75,
             }));
         }
 
@@ -51,7 +50,7 @@
         <div class="span12">
             <center>
                 <h3>
-                    基于 Serverless 图像预测案例
+                    基于 Serverless 图像压缩
                 </h3>
             </center>
         </div>
@@ -88,11 +87,10 @@
             </center>
             <fieldset>
                 <legend id="action">体验：</legend>
-                min_quality： <input type="text" id="min_quality" value="65"
+                format： <input type="text" id="format" value="jpg"
                                     style="margin-top: 5px; margin-right: 10px"/>
-                max_quality： <input type="text" id="max_quality" value="80"
+                quality： <input type="number" id="quality" value=75
                                     style="margin-top: 5px; margin-right: 10px"/>
-                speed： <input type="text" id="speed" value="3" style="margin-top: 5px; margin-right: 10px"/>
                 <br>
                 <input type="file" id="upload" onchange="getImage(this)"/>
                 <button class="btn" onclick="getCompressImage()">图像压缩</button>
@@ -109,17 +107,16 @@
     document.getElementById("args").innerText = `  Headers:
      Content-type: application/json
   Body:
-     image: 图片Base64后的字符串(base64后最大不可以超过5M)
-     min_quality: 质量区间，默认65
-     max_quality: 质量区间，默认80
-     speed: 压缩速度（默认3，最高10）`
+     image: 图片Base64后的字符串(base64后最大不可以超过15M)
+     quality: 图像压缩质量， 默认 75, 取值范围为 [0,100]
+     format: 图片格式，比如 png, jpg, jpeg 等, 默认为 jpg`
     document.getElementById("example").innerText = `import requests
 import base64
 def getResult(imagePath):
     with open(imagePath, 'rb') as f:
         data = f.read()
     image = str(base64.b64encode(data), encoding='utf-8')
-    data = json.dumps({"image": 'data:image/png;base64,'+image, "min_quality": "65", "max_quality": "80", "speed": "3"})
+    data = json.dumps({"image": 'data:image/png;base64,'+image, "quality": 75, "format": "png"})
     txt = requests.post("${window.location.protocol + '//' + window.location.host + uri}", data=data,
                         headers={'Content-Type': 'application/json'})
     return txt.content.decode("utf-8")

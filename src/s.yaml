@@ -15,7 +15,7 @@
 #   有问题快来钉钉群问一下吧：33947367
 # ------------------------------------
 edition: 1.0.0
-name: png-compress
+name: image-compress
 # access 是当前应用所需要的密钥信息配置：
 # 密钥配置可以参考：https://www.serverless-devs.com/serverless-devs/command/config
 # 密钥使用顺序可以参考：https://www.serverless-devs.com/serverless-devs/tool#密钥使用顺序与规范
@@ -25,7 +25,7 @@ vars: # 全局变量
   region: "{{ region }}"
   service:
     name: "{{ serviceName }}"
-    description: 'png compress'
+    description: 'image compress'
 
 services:
   framework: # 业务名称/模块名称
@@ -38,19 +38,19 @@ services:
       service: ${vars.service}
       function:
         name: "{{ functionName }}"
-        description: 'png compress'
-        codeUri: './'
-        runtime: python3
+        description: 'image compress'
+        codeUri: './code'
+        runtime: python3.9
         handler: index.app
-        timeout: 60
+        timeout: 300
       triggers:
         - name: httpTrigger
           type: http
           config:
             authType: anonymous
             methods:
-              - GET
               - POST
+              - GET
       customDomains:
         - domainName: auto
           protocol: HTTP
