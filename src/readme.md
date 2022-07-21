@@ -66,32 +66,26 @@
 
 ![](http://image.editor.devsapp.cn/evBw7lh8ktv6xDBzSSzvjr1ykchAF9hG41gf1ek1sk8tr4355A/7bExa4bcCCEEC8BwatAb)
 
-部署当前应用之后，可以通过返回的地址进行测试，也可以通过api进行调用：
+您可以使用 s 工具/控制台/sdk代码调用函数， 其中调用函数的 payload 是:
 
-地址：`http://你的域名/compress`
-参数：
 ```
-  Headers:
-     Content-type: application/json
-  Body:
-     image: 图片Base64后的字符串(base64后最大不可以超过5M)
-     format: 图片格式，比如 png, jpg, jpeg 等, 默认为 jpg
-     quality: 压缩质量 0-100, 默认值为 75
+{
+  "bucket": "mybucket",
+  "region": "cn-hangzhou",
+  "image": "src/a.png",
+  "quality": 75,
+  "dst": "dest"
+}
 ```
-案例：
-```
-import requests
-import base64
-def getResult(imagePath):
-    with open(imagePath, 'rb') as f:
-        data = f.read()
-    image = str(base64.b64encode(data), encoding='utf-8')
-    data = json.dumps({"image": 'data:image/png;base64,'+image, "format": "png", "quality": 75})
-    txt = requests.post("http://localhost:7291/compress", data=data,
-                        headers={'Content-Type': 'application/json'})
-    return txt.content.decode("utf-8")
-print(getResult("./test.png"))
-```
+
+其中 
+
+- bucket: bucket 名字
+- region: 参数是可选的， 不填默认为和 FC 函数相同的 region
+- image: 表示图片在 bucket 上的 objectkey
+- quality: 压缩质量 0-100, 默认值为 75
+- dst: 保存压缩后图片的目录
+
 
 </appdetail>
 

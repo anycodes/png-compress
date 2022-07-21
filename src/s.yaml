@@ -26,6 +26,7 @@ vars: # 全局变量
   service:
     name: "{{ serviceName }}"
     description: 'image compress'
+    role: "{{ roleArn }}"
 
 services:
   framework: # 业务名称/模块名称
@@ -41,18 +42,5 @@ services:
         description: 'image compress'
         codeUri: './code'
         runtime: python3.9
-        handler: index.app
-        timeout: 300
-      triggers:
-        - name: httpTrigger
-          type: http
-          config:
-            authType: anonymous
-            methods:
-              - POST
-              - GET
-      customDomains:
-        - domainName: auto
-          protocol: HTTP
-          routeConfigs:
-            - path: '/*'
+        handler: index.handler
+        timeout: 600
