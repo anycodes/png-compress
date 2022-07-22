@@ -44,3 +44,4 @@ services:
         runtime: python3.9
         handler: index.handler
         timeout: 600
+        memorySize: 3072
