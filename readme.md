@@ -22,7 +22,7 @@
 
 <code_url>
 
-
+- [:smiley_cat: 代码](https://github.com/anycodes/png-compress)
 
 </code_url>
 <preview>
@@ -53,19 +53,21 @@
 
 | 服务/业务 |  权限 |  备注  |
 | --- |  --- |   --- |
-| 函数计算 | AliyunFCFullAccess |   |
+| 函数计算 | AliyunFCFullAccess |  需要创建函数处理核心业务逻辑 |
 
 </auth>
 
 <remark>
 
-
+您还需要注意：   
+当前应用目前只支持标准的 PNG 格式图片进行压缩。
 
 </remark>
 
 <disclaimers>
 
-
+免责声明：   
+本项目采用了 pngquant （https://pngquant.org/）作为技术实现方案，以开源形式进行组件共享，具体的使用所需遵循的协议，请参考 pngquant 项目。
 
 </disclaimers>
 
@@ -100,6 +102,47 @@
 ## 使用文档
 
 <usedetail id="flushContent">
+
+
+<usedetail>
+
+部署当前应用之后，可以通过返回的地址进行测试，也可以通过api进行调用。
+
+# 返回的地址进行测试
+
+只需要通过选择文件（需要选择 PNG 格式的图片），点击图片压缩即可看到压缩结果：
+
+![](http://image.editor.devsapp.cn/evBw7lh8ktv6xDBzSSzvjr1ykchAF9hG41gf1ek1sk8tr4355A/1S8il5z6e3D67b62lr6s)
+
+# 通过api进行调用
+
+地址：`http://你的域名/compress`
+
+参数：
+```
+  Headers:
+     Content-type: application/json
+  Body:
+     image: 图片Base64后的字符串(base64后最大不可以超过5M)
+     min_quality: 质量区间，默认65
+     max_quality: 质量区间，默认80
+     speed: 压缩速度（默认3，最高10）
+```
+
+案例：
+```
+import requests
+import base64
+def getResult(imagePath):
+    with open(imagePath, 'rb') as f:
+        data = f.read()
+    image = str(base64.b64encode(data), encoding='utf-8')
+    data = json.dumps({"image": 'data:image/png;base64,'+image, "min_quality": "65", "max_quality": "80", "speed": "3"})
+    txt = requests.post("http://localhost:7291/compress", data=data,
+                        headers={'Content-Type': 'application/json'})
+    return txt.content.decode("utf-8")
+print(getResult("./test.png"))
+```
 </usedetail>
 
 
