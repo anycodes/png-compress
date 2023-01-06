@@ -20,11 +20,11 @@
 
 </description>
 
-<code_url>
+<codeUrl>
 
-- [:smiley_cat: 代码](https://github.com/anycodes/png-compress)
 
-</code_url>
+
+</codeUrl>
 <preview>
 
 
@@ -42,7 +42,7 @@
 
 | 服务 |  备注  |
 | --- |  --- |
-
+| 函数计算 |  需要创建函数处理核心业务逻辑 |
 
 </service>
 
@@ -95,8 +95,6 @@
 当前应用仅支持 PNG 图片的压缩，压缩效果如下：
 
 ![](http://image.editor.devsapp.cn/evBw7lh8ktv6xDBzSSzvjr1ykchAF9hG41gf1ek1sk8tr4355A/7bExa4bcCCEEC8BwatAb)
-
-
 </appdetail>
 
 ## 使用文档
@@ -151,7 +149,8 @@ print(getResult("./test.png"))
 
 您如果有关于错误的反馈或者未来的期待，您可以在 [Serverless Devs repo Issues](https://github.com/serverless-devs/serverless-devs/issues) 中进行反馈和交流。如果您想要加入我们的讨论组或者了解 FC 组件的最新动态，您可以通过以下渠道进行：
 
-<p align="center">
+<p align="center">  
+
 | <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407298906_20211028074819117230.png" width="130px" > | <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407044136_20211028074404326599.png" width="130px" > | <img src="https://serverless-article-picture.oss-cn-hangzhou.aliyuncs.com/1635407252200_20211028074732517533.png" width="130px" > |
 | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | <center>微信公众号：`serverless`</center>                                                                                         | <center>微信小助手：`xiaojiangwh`</center>                                                                                        | <center>钉钉交流群：`33947367`</center>                                                                                           |
