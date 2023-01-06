@@ -11,7 +11,7 @@ Type: Application
 Name: png-compress
 Provider:
   - 阿里云
-Version: 0.0.1
+Version: 0.0.2
 Description: 基于 pngquant 的高质量 PNG 图片压缩功能
 HomePage: https://github.com/anycodes/png-compress
 Tags: #标签详情
