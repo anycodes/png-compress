@@ -95,6 +95,8 @@
 当前应用仅支持 PNG 图片的压缩，压缩效果如下：
 
 ![](http://image.editor.devsapp.cn/evBw7lh8ktv6xDBzSSzvjr1ykchAF9hG41gf1ek1sk8tr4355A/srZyhix55GBkGzC4CShk.png)
+
+
 </appdetail>
 
 ## 使用文档
