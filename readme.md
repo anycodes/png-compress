@@ -91,8 +91,6 @@
 <appdetail id="flushContent">
 
 
-<appdetail>
-
 当前应用仅支持 PNG 图片的压缩，压缩效果如下：
 
 ![](http://image.editor.devsapp.cn/evBw7lh8ktv6xDBzSSzvjr1ykchAF9hG41gf1ek1sk8tr4355A/srZyhix55GBkGzC4CShk.png)
@@ -103,9 +101,6 @@
 ## 使用文档
 
 <usedetail id="flushContent">
-
-
-<usedetail>
 
 部署当前应用之后，可以通过返回的地址进行测试，也可以通过api进行调用。
 
