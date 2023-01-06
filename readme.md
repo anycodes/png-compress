@@ -67,7 +67,7 @@
 <disclaimers>
 
 免责声明：   
-本项目采用了 pngquant （https://pngquant.org/）作为技术实现方案，以开源形式进行组件共享，具体的使用所需遵循的协议，请参考 pngquant 项目。
+本项目采用了 [pngquant](https://pngquant.org/)作为技术实现方案，以开源形式进行组件共享，具体的使用所需遵循的协议，请参考 pngquant 项目。
 
 </disclaimers>
 
@@ -94,7 +94,7 @@
 
 当前应用仅支持 PNG 图片的压缩，压缩效果如下：
 
-![](http://image.editor.devsapp.cn/evBw7lh8ktv6xDBzSSzvjr1ykchAF9hG41gf1ek1sk8tr4355A/7bExa4bcCCEEC8BwatAb)
+![](http://image.editor.devsapp.cn/evBw7lh8ktv6xDBzSSzvjr1ykchAF9hG41gf1ek1sk8tr4355A/srZyhix55GBkGzC4CShk.png)
 </appdetail>
 
 ## 使用文档
@@ -110,7 +110,7 @@
 
 只需要通过选择文件（需要选择 PNG 格式的图片），点击图片压缩即可看到压缩结果：
 
-![](http://image.editor.devsapp.cn/evBw7lh8ktv6xDBzSSzvjr1ykchAF9hG41gf1ek1sk8tr4355A/1S8il5z6e3D67b62lr6s)
+![](http://image.editor.devsapp.cn/evBw7lh8ktv6xDBzSSzvjr1ykchAF9hG41gf1ek1sk8tr4355A/Ce6jtsiyvDsgAZjDFAr5.png)
 
 # 通过api进行调用
 
@@ -145,6 +145,8 @@ print(getResult("./test.png"))
 
 
 <devgroup>
+
+
 ## 开发者社区
 
 您如果有关于错误的反馈或者未来的期待，您可以在 [Serverless Devs repo Issues](https://github.com/serverless-devs/serverless-devs/issues) 中进行反馈和交流。如果您想要加入我们的讨论组或者了解 FC 组件的最新动态，您可以通过以下渠道进行：
