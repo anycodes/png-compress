@@ -57,16 +57,19 @@
 
 </auth>
 
+您还需要注意：
+
 <remark>
 
-您还需要注意：   
 当前应用目前只支持标准的 PNG 格式图片进行压缩。
 
 </remark>
 
+免责声明： 
+
 <disclaimers>
 
-免责声明：   
+
 本项目采用了 [pngquant](https://pngquant.org/)作为技术实现方案，以开源形式进行组件共享，具体的使用所需遵循的协议，请参考 pngquant 项目。
 
 </disclaimers>
