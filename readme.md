@@ -65,7 +65,7 @@
 
 </remark>
 
-免责声明： 
+免责声明：
 
 <disclaimers>
 
