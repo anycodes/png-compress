@@ -90,13 +90,33 @@
 
 <appdetail id="flushContent">
 
-# 应用详情
+我们把图片压缩逻辑封装成一个 python 的函数，可以快速发布函数计算平台，从而得到一个弹性高可用的图片压缩服务。
 
-比如 PNG 图片压缩效果如下：
+**其中：**
+
+- 对于 png 格式的图片， 使用了 pngquant 工具进行图片压缩处理
+
+- 对于其他格式， 使用 wand (ImageMagick) 对图片进行压缩处理
+
+
+通过本应用，您可以部署一个图片压缩服务，比如 PNG 图片压缩效果如下：
 
 ![](http://image.editor.devsapp.cn/evBw7lh8ktv6xDBzSSzvjr1ykchAF9hG41gf1ek1sk8tr4355A/7bExa4bcCCEEC8BwatAb)
 
-您可以使用 s 工具/控制台/sdk代码调用函数， 其中调用函数的 payload 是:
+
+
+
+</appdetail>
+
+## 使用文档
+
+<usedetail id="flushContent">
+
+项目部署完成后， 进入应用的环境详情，跳转到指定的压缩函数：
+
+![](http://image.editor.devsapp.cn/khkZiuj24dFrSiCdAe9cyr1grr6hrArhCGzvvd2t3l7huywAC8/1AZDeAblFG2DradAkgSF.png)
+
+对该函数就行调用， 其中 payload 是如下 json 格式
 
 ```
 {
@@ -116,11 +136,6 @@
 - quality: 压缩质量 0-100, 默认值为 75
 - dst: 保存压缩后图片的目录
 
-</appdetail>
-
-## 使用文档
-
-<usedetail id="flushContent">
 </usedetail>
 
 
